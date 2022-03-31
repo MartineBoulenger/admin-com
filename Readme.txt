@@ -1,6 +1,7 @@
-Thanks for downloading this template!
+lien test
 
-Template Name: Moderna
-Template URL: https://bootstrapmade.com/free-bootstrap-template-corporate-moderna/
-Author: BootstrapMade.com
-License: https://bootstrapmade.com/license/
+
+Template Name: Admin&Com
+ URL: https://www.creationwebdesignboulenger.com
+Author: Boulenger Martine
+
