@@ -5,13 +5,14 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Admin&Com Conseils -</title>
+  <title>Admin&Com Conseils - Contact-</title>
   <meta content="Admin&Com Conseils est un secrétariat externalisé destiné aux professionnels. Admin&Com s'occupe de la gestion d'entreprise au quotidien. Basé à Lyon Admin&Com Conseils propose ses services sur site ou à distance. Gagnez en efficacité et concentrez vous sur votre coeur de métier. Admin&com Conseils est là pour vous aider." name="description">
   <meta content="Admin&Com Conseils  est un secrétariat externalisé destiné aux professionnels. Admin&Com s'occupe de la gestion d'entreprise au quotidien. Basé à Lyon Admin&Com Conseils propose ses services sur site ou à distance. Gagnez en efficacité et concentrez vous sur votre coeur de métier. Admin&com Conseils est là pour vous aider." name="keywords">
 
   <!-- Favicons -->
   <link href="assets/img/Logo-acconseils.png" rel="icon">
   <link href="assets/img/Logo-acconseils.png" rel="apple-touch-icon">
+
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,700,700i&display=swap" rel="stylesheet">
@@ -39,6 +40,7 @@
 <body>
 
   <!-- ======= Header ======= -->
+  <!-- ======= Header ======= -->
   <header id="header" class="fixed-top d-flex align-items-center header-transparent">
     <div class="container d-flex justify-content-between align-items-center">
 
@@ -51,8 +53,8 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a href="index.html">Accueil</a></li>
-          <li><a class="active" href="services.html">Services</a></li>
-          <li><a href="contact.php">Contact</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a class ="active" href="contact.php">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -60,123 +62,108 @@
     </div>
   </header><!-- End Header -->
 
-
   <main id="main">
-
     <!-- ======= Our Services Section ======= -->
     <section class="breadcrumbs">
       <div class="container">
 
         <div class="section-title">
-          <h2>Nos prestations</h2>
+          <h2>Contactez nous</h2>
          
         </div>
 
       </div>
     </section><!-- End Our Services Section -->
 
-    <!-- ======= Services Section ======= -->
-    <section class="services">
+
+    <!-- ======= Contact Section ======= -->
+    <section class="contact" data-aos="fade-up" data-aos-easing="ease-in-out" data-aos-duration="500">
       <div class="container">
 
         <div class="row">
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="icon-box icon-box-pink">
-              <div class="icon"><img src="assets/img/icone5.jpg"></div>
-              <h4 class="title"><a href="">Audit</a></h4>
-              <p class="description">Analyse, identification,rapport, accompagnement.</p>
+
+          <div class="col-lg-6">
+
+            <div class="row">
+              <div class="col-md-12">
+                <div class="info-box">
+                  <i class="bx bx-map"></i>
+                  <h3>Adresse</h3>
+                  <p>135 Cours Gambetta, 69003, Lyon</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bx bx-envelope"></i>
+                  <h3>Email Us</h3>
+                  <p>info@example.com<br>contact@example.com</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bx bx-phone-call"></i>
+                  <h3>Call Us</h3>
+                  <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                </div>
+              </div>
             </div>
+
           </div>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="icon-box icon-box-cyan">
-              <div class="icon"><img src="assets/img/icone4.jpg"></div>
-              <h4 class="title"><a href="">Administratif</a></h4>
-              <p class="description">Gestion, suivi, formalités administratives.</p>
-            </div>
-          </div>
+          <div class="col-lg-6">
+          <?php
+            if(
+                !empty($_POST['mail']) && filter_var($_POST['mail'], FILTER_VALIDATE_EMAIL)&&
+                !empty($_POST['name']) &&
+                !empty($_POST['message'])
+            ){
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon-box icon-box-green">
-              <div class="icon"><i class='bx bx-euro'></i></div>
-              <h4 class="title"><a href="">Comptabilité</a></h4>
-              <p class="description">Saisie, enregistrement, relances, transmissions comptable, paies et congés.</p>
-            </div>
-          </div>
+                $headers = 'From: ' . $_POST['mail'] . "\r\n" .
+                'Reply-To: ' . $_POST['mail'] . "\r\n" .
+                'X-Mailer: PHP/' . phpversion();
+                mail('contact@admincomconseils.fr', 'Formulaire de contact', $_POST['message'], $headers);
+            }elseif(!empty($_POST)){
+                echo '<div class="alert alert-danger">Vous n\'avez pas rempli tous les champs</div>';
+            }
+            if(empty($_post)){
+                $_POST = array(
+                    'mail' => '',
+                    'name' => '',
+                    'message' => ''
+                );
+            }
+            ?>
 
-          <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="icon-box icon-box-blue">
-              <div class="icon"><img src="assets/img/icone1.jpg"></div>
-              <h4 class="title"><a href="">Commercial</a></h4>
-              <p class="description">Affaire, portefeuille client, base de données, téléprospection, commande, appels d'offre.</p>
-            </div>
+          <form role="form" method="post">
+          <fieldset>
+              <div class="form-group">
+                  <label for="mail">Adresse email</label>
+                  <input type="text" class="form-control" name="mail" id="mail" placeholder="nom@domain.com" value="<?php echo $_POST['mail']; ?>">
+              </div>
+              <div class="form-group">
+                  <label for="name">Votre nom</label>
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Nom" value="<?php echo $_POST['name']; ?>">
+              </div>
+              <div class="form-group">
+                  <label for="message">Votre message</label>
+                  <textarea name="message" id="message" class="form-control" placeholder="Saisissez votre message" rows="3"><?php echo $_POST['message']; ?></textarea>
+              </div>
+
+              <input type="submit" value="Envoyer" class="btn btn-primary">
+          </fieldset>
+      </form>
           </div>
 
         </div>
 
       </div>
-    </section><!-- End Services Section -->
+    </section><!-- End Contact Section -->
 
-
-    <!-- ======= Service Details Section ======= -->
-    <section class="service-details">
-      <div class="container">
-
-        <div class="row">
-          <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/service-details-1.jpg" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="#">Audit</a></h5>
-                <p class="card-text">Analyse et identification des axes de progression. Rapport clair et complet pour augmenter vos performances. Accompagnement dans les solutions retenues.</p>
-                <div class="read-more"><a href="contact.php"><i class="bi bi-arrow-right"></i> Nous contacter</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/service-details-2.jpg" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="#">Administratif</a></h5>
-                <p class="card-text">Gestion des devis, factures, avoirs et contrats. Gestion des stocks et des bons de commande. Suivi ressources humaines. Recouvrement, gestion des planning, classement, archivage.</p>
-                <div class="read-more"><a href="contact.php"><i class="bi bi-arrow-right"></i> Nous contacter</a></div>
-              </div>
-            </div>
-
-          </div>
-          <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/service-details-3.jpg" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="#">Comptabilité</a></h5>
-                <p class="card-text">Saisie et rapprochement bancaire. Enregistrement des règlements et relances clients. Relations avec le cabinet comptable et transmission des données. Préparation des paies et congés.</p>
-                <div class="read-more"><a href="contact.php"><i class="bi bi-arrow-right"></i> Nous contacter</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="card">
-              <div class="card-img">
-                <img src="assets/img/service-details-4.jpg" alt="...">
-              </div>
-              <div class="card-body">
-                <h5 class="card-title"><a href="#">Commercial</a></h5>
-                <p class="card-text">Apporteur d'affaire. Suivi du portefeuille client. Suivi de la base de données client CRM. Téléprospection, prise et suivi de commande. Constitution des dossiers d'appels d'offre.</p>
-                <div class="read-more"><a href="contact.php"><i class="bi bi-arrow-right"></i> Nous contacter</a></div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section><!-- End Service Details Section -->
-
+    <!-- ======= Map Section ======= -->
+    <section class="map mt-2">
+      <div class="container-fluid p-0">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2784.0530541940752!2d4.856691215884207!3d45.75008232234216!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f4ea6e23b82c2b%3A0x75279f8157298393!2s135%20Cr%20Gambetta%2C%2069003%20Lyon!5e0!3m2!1sfr!2sfr!4v1648812730278!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>      </div>
+    </section><!-- End Map Section -->
 
   </main><!-- End #main -->
 
