@@ -18,12 +18,12 @@ body {
 }
 
 a {
-  color: #4fa6d5;
+  color: #1c259c;
   text-decoration: none;
 }
 
 a:hover {
-  color: #45beff;
+  color: #edf1f3;
   text-decoration: none;
 }
 
@@ -73,7 +73,7 @@ h1, h2, h3, h4, h5, h6, .font-primary {
 }
 
 #header.header-scrolled {
-  background: rgba(30, 67, 86, 0.8);
+  background: #0295de;
   height: 60px;
 }
 #header .logo h1 {
@@ -519,7 +519,7 @@ section {
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 15px 0;
-  background-color: #f3f8fa;
+  background-color: #31b4e8;
   min-height: 40px;
 }
 .breadcrumbs h2 {
@@ -1843,14 +1843,14 @@ section {
 # Footer
 --------------------------------------------------------------*/
 #footer {
-  background: #0b212d;
+  background: #1c259c;
   padding: 0 0 30px 0;
   color: #fff;
   font-size: 14px;
 }
 #footer .footer-newsletter {
   padding: 50px 0;
-  background: #0d2735;
+  background: #0295de;
 }
 #footer .footer-newsletter h4 {
   font-size: 24px;
@@ -1891,7 +1891,7 @@ section {
   background: #468db3;
 }
 #footer .footer-top {
-  background: #0d2735;
+  background: #0295de;
   border-top: 1px solid #17455e;
   border-bottom: 1px solid #123649;
   padding: 60px 0 30px 0;
@@ -1929,14 +1929,14 @@ section {
   transition: 0.3s;
 }
 #footer .footer-top .social-links a:hover {
-  background: #68A4C4;
+  background: #11435d;
   color: #fff;
   text-decoration: none;
 }
 #footer .footer-top h4 {
   font-size: 18px;
   font-weight: 600;
-  color: #a2cce3;
+  color: #1c259c;
   position: relative;
   padding-bottom: 12px;
 }
@@ -1969,7 +1969,7 @@ section {
   line-height: 1;
 }
 #footer .footer-top .footer-links ul a:hover {
-  color: #a2cce3;
+  color: #1c259c;
 }
 #footer .footer-top .footer-contact {
   margin-bottom: 30px;
