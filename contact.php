@@ -197,9 +197,9 @@
           <div class="col-lg-3 col-md-6 footer-contact">
             <h4>Contactez nous</h4>
             <p>
-             ici<br>
-             Nous mettrons<br>
-            votre adresse <br><br>
+            135<br>
+            cours Gambetta<br>
+            69003, Lyon <br><br>
               <strong>Téléphone :</strong> 06.44.88.55.66<br>
               <strong>Email :</strong><a href="mailto:contact@admincomconseils.fr"> contact@admincomconseils.fr</a> <br>
             </p>
